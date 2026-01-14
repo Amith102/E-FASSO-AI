@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>FASHION.AI | Virtual Try-On Experience</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+        <!-- Top Navigation -->
+        <header class="app-header">
+            <div class="container flex items-center justify-between">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span class="material-symbols-outlined text-xl">auto_awesome</span>
+                    </div>
+                    <span>FASHION.AI</span>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="desktop-nav gap-8 items-center">
+                    <a class="nav-link" href="#">How it Works</a>
+                    <a class="nav-link" href="#">Catalog</a>
+                    <a class="nav-link" href="#">AI Studio</a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle" class="btn-icon">
+                        <span class="material-symbols-outlined">dark_mode</span>
+                    </button>
+                    <button class="btn btn-primary hidden sm:flex">
+                        Get Started
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="mobile-menu-btn btn-icon" aria-expanded="false">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="mobile-menu">
+                <a class="nav-link" href="#">How it Works</a>
+                <a class="nav-link" href="#">Catalog</a>
+                <a class="nav-link" href="#">AI Studio</a>
+                <button class="btn btn-primary" style="width: 100%;">
+                    Get Started
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="container hero">
+                <!-- Text Content -->
+                <div class="flex flex-col">
+                    <div class="badge">
+                        <div class="pulse-dot"></div>
+                        New AI Model v4.0
+                    </div>
+
+                    <h1 class="hero-title">
+                        Try Before You Buy – <br><span class="text-primary">Powered by AI</span>
+                    </h1>
+
+                    <p class="hero-text">
+                        Experience the future of fitting rooms. Upload your photo and see yourself in our latest
+                        couture collection instantly with 99.9% precision accuracy.
+                    </p>
+
+                    <div class="flex gap-4" style="flex-wrap: wrap;">
+                        <button class="btn btn-primary">
+                            <span class="material-symbols-outlined">upload_file</span>
+                            Upload Your Photo
+                        </button>
+                        <button class="btn btn-secondary">
+                            <span class="material-symbols-outlined">visibility</span>
+                            Start Virtual Try-On
+                        </button>
+                    </div>
+
+                    <!-- Trust Markers -->
+                    <div class="trust-markers">
+                        <div class="trust-item">
+                            <div class="icon-circle">
+                                <span class="material-symbols-outlined">scan</span>
+                            </div>
+                            <div class="trust-text">
+                                <span class="trust-label">Precision Fit</span>
+                                <span class="trust-value">Anatomically Accurate</span>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="icon-circle">
+                                <span class="material-symbols-outlined">check_circle</span>
+                            </div>
+                            <div class="trust-text">
+                                <span class="trust-label">Fabric Match</span>
+                                <span class="trust-value">98% Realism Score</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Side -->
+                <div class="flex justify-center" style="position: relative;">
+                    <div class="preview-card">
+                        <!-- Main Model Image -->
+                        <img alt="High fashion model" class="preview-img"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd6lCmudrksHnG7sIMTN5hOB3n_Zmn7_8shIvxsawKGP0p1EACc128KLPajqZDglOQ3agwyI7mP4Mz7TqI8w1b3mRJl8-na17TbsoQK_RcFrr2xnvuxywwr5-8YCrTMn2XcVwOGkvj677L9QTWydjmTHJbXeOs-Y1ODcV7CedQ73K8SJgoGFFdabt6JzW_DXhNZrFOgmP6jcQtZ3LHLrI0r_IWd9vbHR6LvqpKJ6F5aGMrMfSLvgEuEQBZ7mEfze_jGO7wIMMhB5N5" />
+
+                        <div class="overlay"></div>
+
+                        <!-- Floating Components -->
+                        <div class="glass floating-chip scan-chip">
+                            <span class="material-symbols-outlined text-primary"
+                                style="font-size: 1.25em;">filter_center_focus</span>
+                            <span>Scanning Body...</span>
+                        </div>
+
+                        <div class="glass floating-chip fabric-chip">
+                            <span class="material-symbols-outlined"
+                                style="color: #34d399; font-size: 1.25em;">texture</span>
+                            <span>Fabric Silk 92%</span>
+                        </div>
+
+                        <!-- Bottom Card -->
+                        <div class="glass bottom-card">
+                            <div class="flex justify-between items-center">
+                                <div class="flex flex-col">
+                                    <span
+                                        style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7;">Current
+                                        Rendering</span>
+                                    <span style="font-weight: 700;">Celestial Silk Gown</span>
+                                </div>
+                                <div
+                                    style="padding: 0.25rem 0.5rem; background: rgba(var(--primary-rgb), 0.2); border-radius: 4px; font-size: 0.65rem; font-weight: 800; color: var(--primary);">
+                                    VIRTUAL LIVE
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Decorative BG -->
+                    <div
+                        style="position: absolute; top: -10%; right: -10%; width: 300px; height: 300px; background: var(--primary); opacity: 0.1; filter: blur(100px); border-radius: 50%; z-index: -1;">
+                    </div>
+                    <div
+                        style="position: absolute; bottom: -10%; left: -10%; width: 300px; height: 300px; background: purple; opacity: 0.1; filter: blur(100px); border-radius: 50%; z-index: -1;">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container footer-content">
+                <div class="flex items-center gap-2">
+                    <div style="width: 24px; height: 24px; background: rgba(0,0,0,0.2); border-radius: 4px;"></div>
+                    <span style="font-weight: 700; opacity: 0.6;">© 2024 FASHION.AI</span>
+                </div>
+                <div class="flex gap-8" style="font-size: 0.875rem; font-weight: 500; opacity: 0.6;">
+                    <a href="#" class="nav-link">Privacy Policy</a>
+                    <a href="#" class="nav-link">Terms of Service</a>
+                    <a href="#" class="nav-link">Contact Us</a>
+                </div>
+                <div class="flex gap-4">
+                    <button class="btn-icon"><span class="material-symbols-outlined">share</span></button>
+                    <button class="btn-icon"><span class="material-symbols-outlined">language</span></button>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
