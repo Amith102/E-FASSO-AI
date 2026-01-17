@@ -1,6 +1,7 @@
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from .services import image_processing, skin_tone, body_measurement
+from . import vton
 import shutil
 
 app = FastAPI(title="Fashion AI API", version="1.0.0")
@@ -20,9 +21,11 @@ def read_root():
 @app.post("/analyze")
 async def analyze_image(
     front_image: UploadFile = File(...), 
-    height_cm: float = Form(...)
+    height_cm: str | None = Form(None)
 ):
     try:
+        # Parse height if provided
+        height_val = float(height_cm) if height_cm else None
         # 1. Read Image
         image_bytes = await front_image.read()
         
@@ -35,7 +38,7 @@ async def analyze_image(
         skin_analysis = skin_tone.analyze_skin_tone(processed_img)
         
         # 4. Estimate Measurements
-        measurements = body_measurement.estimate_measurements(processed_img, height_cm)
+        measurements = body_measurement.estimate_measurements(processed_img, height_val)
         
         return {
             "status": "success",
@@ -45,3 +48,11 @@ async def analyze_image(
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/try-on")
+async def virtual_try_on(
+    person_image: UploadFile = File(...),
+    garment_image: UploadFile = File(...),
+    description: str = Form("clothing")
+):
+    return await vton.generate_tryon(person_image, garment_image, description)
