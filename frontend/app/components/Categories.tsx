@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 const CategoryCard = ({ title, image, link }: { title: string, image: string, link: string }) => (
-    <Link href={link} className="group relative h-[300px] md:h-[400px] w-full overflow-hidden rounded-2xl border border-white/10">
+    <Link href={link} className="group relative h-[300px] md:h-[400px] w-full overflow-hidden rounded-2xl border border-black/5">
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10" />
         <img
             src={image}
@@ -25,9 +25,9 @@ export default function Categories() {
             <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
                 <div>
                     <h2 className="text-[#0062f5] text-sm font-semibold mb-2 uppercase tracking-wider">Collections</h2>
-                    <h3 className="text-3xl md:text-4xl font-bold text-white">Shop by Category</h3>
+                    <h3 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white font-serif">Shop by Category</h3>
                 </div>
-                <Link href="/shop" className="text-neutral-400 hover:text-white transition-colors text-sm font-medium">
+                <Link href="/shop" className="text-neutral-500 hover:text-neutral-900 transition-colors text-sm font-medium">
                     View All Categories
                 </Link>
             </div>
@@ -35,7 +35,7 @@ export default function Categories() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <CategoryCard
                     title="Men's Collection"
-                    image="https://images.unsplash.com/photo-1516257984-b1b4d8c9230c?q=80&w=800&auto=format&fit=crop"
+                    image="/images/mens_collection.png"
                     link="/shop"
                 />
                 <CategoryCard
@@ -45,7 +45,7 @@ export default function Categories() {
                 />
                 <CategoryCard
                     title="Accessories"
-                    image="https://images.unsplash.com/photo-1523293188086-b51292955d2c?q=80&w=800&auto=format&fit=crop"
+                    image="/images/accessories_collection.png"
                     link="/shop"
                 />
             </div>

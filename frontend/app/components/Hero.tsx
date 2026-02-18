@@ -13,10 +13,11 @@ const Hero = () => {
                     src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=2560&auto=format&fit=crop"
                     alt="Hero Background"
                     fill
-                    className="object-cover object-[50%_25%] opacity-70"
+                    className="object-cover object-[50%_25%] opacity-70 animate-slow-zoom"
                     priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent h-32" />
             </div>
 
             {/* Content centered and sophisticated */}

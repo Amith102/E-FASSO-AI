@@ -12,18 +12,36 @@ import Navbar from './components/Navbar';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-blue-500/30 overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground selection:bg-blue-500/30 overflow-x-hidden">
       {/* Navbar */}
       <Navbar />
 
-      <main className="pt-20">
+      <main>
         <Hero />
-        <Categories />
-        <Promotions />
-        <Products />
-        <Testimonials />
-        <Features />
-        <Newsletter />
+
+        <div className="animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300 fill-mode-backwards">
+          <Categories />
+        </div>
+
+        <div className="animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-500 fill-mode-backwards">
+          <Promotions />
+        </div>
+
+        <div className="animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-700 fill-mode-backwards">
+          <Products />
+        </div>
+
+        <div className="animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-1000 fill-mode-backwards">
+          <Testimonials />
+        </div>
+
+        <div className="animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-[1200ms] fill-mode-backwards">
+          <Features />
+        </div>
+
+        <div className="animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-[1400ms] fill-mode-backwards">
+          <Newsletter />
+        </div>
       </main>
 
       <Footer />

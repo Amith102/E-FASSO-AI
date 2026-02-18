@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import { useLayoutEffect } from 'react';
 import { ShoppingCart } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { useCart } from '../context/CartContext';
@@ -10,8 +11,44 @@ export default function Navbar() {
     const { cartCount } = useCart();
     const { user, logout } = useAuth();
 
+    useLayoutEffect(() => {
+        let lastScrollY = window.scrollY;
+
+        const handleScroll = () => {
+            const nav = document.querySelector('nav');
+            const currentScrollY = window.scrollY;
+
+            // 1. Style Logic (Transparency/Background)
+            // Only switch to light/glass theme when past the Hero section
+            const heroHeight = window.innerHeight - 80;
+
+            if (currentScrollY > heroHeight) {
+                nav?.classList.add('bg-white/80', 'dark:bg-black/90', 'shadow-sm', 'border-b', 'border-black/5', 'dark:border-white/10', 'text-neutral-900', 'dark:text-white');
+                nav?.classList.remove('bg-transparent', 'text-white');
+            } else {
+                nav?.classList.remove('bg-white/80', 'dark:bg-black/90', 'shadow-sm', 'border-b', 'border-black/5', 'dark:border-white/10', 'text-neutral-900', 'dark:text-white');
+                nav?.classList.add('bg-transparent', 'text-white');
+            }
+
+            // 2. Hide/Show Logic
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // Scrolling DOWN -> Hide
+                nav?.classList.add('-translate-y-full');
+            } else {
+                // Scrolling UP -> Show
+                nav?.classList.remove('-translate-y-full');
+            }
+
+            lastScrollY = currentScrollY;
+        };
+
+        handleScroll(); // Initial check
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <nav className="fixed w-full z-50 top-0 p-6 flex justify-between items-center backdrop-blur-sm border-b border-white/5 bg-black/50">
+        <nav className="fixed w-full z-50 top-0 p-6 flex justify-between items-center transition-all duration-300 text-white bg-transparent">
             <Link href="/" className="text-2xl font-bold tracking-tight text-white hover:opacity-80 transition-opacity">
                 E-FASSO.AI
             </Link>

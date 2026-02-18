@@ -9,18 +9,18 @@ const linkedin = <svg stroke="currentColor" fill="currentColor" strokeWidth="0" 
 
 const Footer = () => {
     return (
-        <footer className='max-w-7xl mx-auto px-6 border-t border-white/10'>
+        <footer className='max-w-7xl mx-auto px-6 border-t border-black/5 bg-background'>
 
 
             <div className='lg:grid lg:grid-cols-[37%,21%,21%,21%] mb-14 pt-14'>
                 <div className=' space-y-10 my-10'>
-                    <Image src={'/icons/Logo.png'} alt='Logo' width={150} height={100} className='w-40 h-6.5' />
-                    <p className='text-gray-400 lg:mr-20'> Small, artisan label that offers a thoughtfully curated collection of high quality everyday essentials made.</p>
+                    <Image src={'/icons/Logo.png'} alt='Logo' width={150} height={100} className='w-40 h-6.5 invert' />
+                    <p className='text-neutral-600 lg:mr-20'> Small, artisan label that offers a thoughtfully curated collection of high quality everyday essentials made.</p>
 
                     <div className='flex gap-x-4'>
-                        <div className='p-3 bg-white/5 border border-white/10 text-white rounded-md cursor-pointer hover:bg-white/10 transition-colors'> {twitter}</div>
-                        <div className='p-3 bg-white/5 border border-white/10 text-white rounded-md cursor-pointer hover:bg-white/10 transition-colors'> {fb}</div>
-                        <div className='p-3 bg-white/5 border border-white/10 text-white rounded-md cursor-pointer hover:bg-white/10 transition-colors'>{linkedin}</div>
+                        <div className='p-3 bg-black/5 border border-black/10 text-neutral-800 rounded-md cursor-pointer hover:bg-black/10 transition-colors'> {twitter}</div>
+                        <div className='p-3 bg-black/5 border border-black/10 text-neutral-800 rounded-md cursor-pointer hover:bg-black/10 transition-colors'> {fb}</div>
+                        <div className='p-3 bg-black/5 border border-black/10 text-neutral-800 rounded-md cursor-pointer hover:bg-black/10 transition-colors'>{linkedin}</div>
                     </div>
 
                 </div>
@@ -28,31 +28,31 @@ const Footer = () => {
 
 
                 <div className='my-10'>
-                    <h3 className='mb-5 font-bold text-white text-lg '>Company</h3>
+                    <h3 className='mb-5 font-bold text-neutral-900 text-lg '>Company</h3>
 
-                    <h5 className='my-2 text-gray-500 text-base font-medium hover:text-white cursor-pointer'>About</h5>
-                    <h5 className='my-2 text-gray-500 text-base font-medium hover:text-white cursor-pointer'>Terms of Use</h5>
-                    <h5 className='my-2 text-gray-500 text-base font-medium hover:text-white cursor-pointer'>Privacy Policy</h5>
-                    <h5 className='my-2 text-gray-500 text-base font-medium hover:text-white cursor-pointer'>How it Works</h5>
-                    <h5 className='my-2 text-gray-500 text-base font-medium hover:text-white cursor-pointer'>Contact Us</h5>
+                    <h5 className='my-2 text-neutral-600 text-base font-medium hover:text-black cursor-pointer'>About</h5>
+                    <h5 className='my-2 text-neutral-600 text-base font-medium hover:text-black cursor-pointer'>Terms of Use</h5>
+                    <h5 className='my-2 text-neutral-600 text-base font-medium hover:text-black cursor-pointer'>Privacy Policy</h5>
+                    <h5 className='my-2 text-neutral-600 text-base font-medium hover:text-black cursor-pointer'>How it Works</h5>
+                    <h5 className='my-2 text-neutral-600 text-base font-medium hover:text-black cursor-pointer'>Contact Us</h5>
                 </div>
 
 
                 <div className='my-10'>
-                    <h3 className='mb-5 font-bold text-white text-lg '>Support</h3>
+                    <h3 className='mb-5 font-bold text-neutral-900 text-lg '>Support</h3>
 
-                    <h5 className='my-2 text-gray-500 text-base font-medium hover:text-white cursor-pointer'>Support Career</h5>
-                    <h5 className='my-2 text-gray-500 text-base font-medium hover:text-white cursor-pointer'>24h Service</h5>
-                    <h5 className='my-2 text-gray-500 text-base font-medium hover:text-white cursor-pointer'>Quick Chat</h5>
+                    <h5 className='my-2 text-neutral-600 text-base font-medium hover:text-black cursor-pointer'>Support Career</h5>
+                    <h5 className='my-2 text-neutral-600 text-base font-medium hover:text-black cursor-pointer'>24h Service</h5>
+                    <h5 className='my-2 text-neutral-600 text-base font-medium hover:text-black cursor-pointer'>Quick Chat</h5>
 
                 </div>
 
 
                 <div className='my-10'>
-                    <h3 className='mb-5 font-bold text-white text-lg '>Contact</h3>
+                    <h3 className='mb-5 font-bold text-neutral-900 text-lg '>Contact</h3>
 
-                    <h5 className='my-2 text-gray-500 text-base font-medium hover:text-white cursor-pointer'>Whatsapp</h5>
-                    <h5 className='my-2 text-gray-500 text-base font-medium hover:text-white cursor-pointer'>Support 24h</h5>
+                    <h5 className='my-2 text-neutral-600 text-base font-medium hover:text-black cursor-pointer'>Whatsapp</h5>
+                    <h5 className='my-2 text-neutral-600 text-base font-medium hover:text-black cursor-pointer'>Support 24h</h5>
 
                 </div>
 
